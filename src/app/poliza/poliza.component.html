@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th></th>
+            <th scope="col">Poliza</th>
+            <th scope="col">Monto Asegurado</th>
+            <th> Coberturas </th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let poliza of polizas">
+          <tr>
+            <td>
+              <button type="submit" class="btn btn-light btn-sm" style="size:5px;" [routerLink]="['abmPoliza', poliza.idPoliza]" >Editar</button>
+              <button type="submit" class="btn btn-light btn-sm" style="margin-left: 5px;">Eliminar</button></td>
+            <td> {{poliza.nomPoliza}} </td>
+            <td> {{poliza.montoAsegurado}} </td>
+            <!--<td> <button type="button" class="btn btn-light"> + </button> </td>-->
+            <td><app-cobertura-poliza [idPoliza]="poliza.idPoliza"></app-cobertura-poliza></td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit" class="btn btn-light btn-sm" style="margin-left: 5px;" [routerLink]="['abmPoliza']">Nuevo</button>
+</div>

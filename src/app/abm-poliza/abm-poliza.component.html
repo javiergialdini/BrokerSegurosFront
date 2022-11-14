@@ -1,0 +1,28 @@
+<form>
+    <div class="form-group">
+      <label style="font-weight: bold" for="exampleFormControlInput1">Nombre de la Poliza</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <br><br>
+    <div class="form-group">
+        <label style="font-weight: bold" for="exampleFormControlInput1">Monto Asegurado</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <br><br>
+      <label style="font-weight: bold" for="exampleFormControlInput1">Coberturas</label>
+      <app-cobertura-poliza [idPoliza]="1"></app-cobertura-poliza>
+      <br>
+    <div class="form-group">
+      <label style="font-weight: bold" for="exampleFormControlSelect1">Agregar cobertura</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+  </form>
+  <br>
+  <button type="submit" class="btn btn-light btn-sm" style="margin-left: 5px;" [routerLink]="['']">Guardar</button>
+  <button type="submit" class="btn btn-light btn-sm" style="margin-left: 5px;" [routerLink]="['']">Volver</button>
