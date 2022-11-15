@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CoberturasPolizaService } from './coberturaPoliza.service';
 import { CoberturaService } from '../cobertura/cobertura.service'
+import { AbmPolizaComponent } from '../abm-poliza/abm-poliza.component';
 
 @Component({
   selector: 'app-cobertura-poliza',
@@ -10,9 +11,10 @@ import { CoberturaService } from '../cobertura/cobertura.service'
 export class CoberturaPolizaComponent implements OnInit {
 
   coberturasPoliza:any;
+  id:any=0;
 
   constructor(public coberturaPoliza:CoberturaService) { }
-
+  
   ngOnInit(): void {
     this.coberturaPoliza.listCoberturasPoliza(this.idPoliza).subscribe
     (

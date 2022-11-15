@@ -12,7 +12,7 @@
           <tr>
             <td>
               <button type="submit" class="btn btn-light btn-sm" style="size:5px;" [routerLink]="['abmPoliza', poliza.idPoliza]" >Editar</button>
-              <button type="submit" class="btn btn-light btn-sm" style="margin-left: 5px;">Eliminar</button></td>
+              <button type="submit" class="btn btn-light btn-sm" style="margin-left: 5px;" (click)="eliminarPoliza(poliza.idPoliza)">Eliminar</button></td>
             <td> {{poliza.nomPoliza}} </td>
             <td> {{poliza.montoAsegurado}} </td>
             <!--<td> <button type="button" class="btn btn-light"> + </button> </td>-->

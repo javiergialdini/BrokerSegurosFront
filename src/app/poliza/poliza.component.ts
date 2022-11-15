@@ -29,6 +29,12 @@ export class PolizaComponent implements OnInit {
     )
   }
 
-  
+  eliminarPoliza(id:number){
+    this.poliza.deletePoliza(id).subscribe
+    (
+      (r) => { this.polizas=r; console.log(r); document.location.reload();},
+      (e) => { console.error(e)}
+    )
+  }
 
 }

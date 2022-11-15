@@ -7,10 +7,4 @@ export class Poliza
     public montoAsegurado:number = 0;
     public coberturasPolizas:coberturasPoliza[] = [];
 
-    constructor(idPoliza:number, nomPoliza:string, montoAsegurado:number, coberturasPolizas:coberturasPoliza[]){
-        this.idPoliza = idPoliza;
-        this.nomPoliza = nomPoliza;
-        this.montoAsegurado = montoAsegurado;
-        this.coberturasPolizas = coberturasPolizas;
-    }
 }

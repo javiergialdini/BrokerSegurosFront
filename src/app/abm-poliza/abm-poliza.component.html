@@ -1,28 +1,25 @@
 <form>
     <div class="form-group">
       <label style="font-weight: bold" for="exampleFormControlInput1">Nombre de la Poliza</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      <input type="input" class="form-control" id="exampleFormControlInput1" name="nombre" [(ngModel)]="cuadroNomPoliza">
     </div>
     <br><br>
     <div class="form-group">
         <label style="font-weight: bold" for="exampleFormControlInput1">Monto Asegurado</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <input type="input" class="form-control" id="exampleFormControlInput1" name="monto" [(ngModel)]="cuadroMontoAsegurado">
       </div>
       <br><br>
       <label style="font-weight: bold" for="exampleFormControlInput1">Coberturas</label>
-      <app-cobertura-poliza [idPoliza]="1"></app-cobertura-poliza>
+      <app-cobertura-poliza *ngIf="id!=0" [idPoliza]="id"></app-cobertura-poliza>
       <br>
     <div class="form-group">
-      <label style="font-weight: bold" for="exampleFormControlSelect1">Agregar cobertura</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+      <label *ngIf="id!=0" style="font-weight: bold" for="exampleFormControlSelect1">Agregar cobertura</label>
+      <select #selectElem (change)="onChange(selectElem.value, id)" *ngIf="id!=0" class="form-control" id="opcionesCobertura">
+        <option value="1">Seleccione una...</option>
+        <option  [ngValue]="cobertura" *ngFor="let cobertura of coberturas" value={{cobertura.idCobertura}}>{{cobertura.nomCobertura}}</option>
       </select>
     </div>
   </form>
   <br>
-  <button type="submit" class="btn btn-light btn-sm" style="margin-left: 5px;" [routerLink]="['']">Guardar</button>
+  <button type="submit" class="btn btn-light btn-sm" style="margin-left: 5px;" (click)="guardarEmpleado()" [routerLink]="['']">Guardar</button>
   <button type="submit" class="btn btn-light btn-sm" style="margin-left: 5px;" [routerLink]="['']">Volver</button>
